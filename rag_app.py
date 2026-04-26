@@ -25,6 +25,48 @@ st.caption(
     "(semantic) retrieval, with an **LLM-grounded answer** that cites its sources."
 )
 
+with st.expander("How to use this app", expanded=False):
+    st.markdown("""
+**What this app does in plain English.**
+Imagine a chatbot that can only answer using a fixed set of documents —
+it can't make stuff up. This is called **RAG** (retrieval-augmented
+generation). Type a question, the app searches its mini knowledge base
+of 53 short documents (work policies, cooking, household tips, health,
+finance, travel), picks the most relevant ones, and asks an AI model
+(Google Gemini) to write the answer using *only* those documents.
+
+**Quick start (30 seconds).**
+1. Pick a question from the **Example questions** dropdown — try
+   "How do I cook pasta properly?"
+2. Click **Ask**.
+3. Read the **Answer** at the top, then expand the **Retrieved
+   contexts** below to see exactly which documents the AI used.
+
+**What the sliders mean.**
+- **BM25 weight (α)** — how the app finds relevant documents. There are
+  two methods:
+    - **Keyword matching** (BM25) — finds documents that share exact
+      words with your question. Great for specific terms.
+    - **Meaning matching** (dense embeddings) — finds documents that
+      mean the same thing even if they use different words. Great for
+      paraphrases ("How do I take time off?" still finds the PTO doc).
+    - **α = 1.0** → only keyword. **α = 0.0** → only meaning. **0.5** →
+      equal blend (recommended).
+- **Top-K retrieved docs** — how many documents to feed to the AI.
+  More = more context but slower.
+
+**What you'll see in the answer.**
+The AI cites its sources with bracketed numbers like `[1]` and `[2]`.
+Those numbers match the **Retrieved contexts** expanders below — click
+to read the actual source. The "Show prompt sent to LLM" panel shows
+exactly what we asked the AI, for transparency.
+
+**Try this scenario.** Ask "How do I sleep better?" and slide α from
+1.0 down to 0.0 — at α=1.0 the keyword-only search might miss the
+sleep-tips doc if it uses different words; at α=0.0 the meaning-based
+search will find it.
+""")
+
 engine = load_engine("corpus")
 stats = engine.stats()
 
