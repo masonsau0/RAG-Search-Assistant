@@ -6,9 +6,10 @@ contexts to an LLM with a strict "only-use-the-context" prompt. Returns
 the answer alongside the retrieved chunks and the exact prompt that was
 sent — so the user can audit grounding.
 
-LLM provider selection: ANTHROPIC_API_KEY is preferred, OPENAI_API_KEY is
-the fallback. Without either, the engine returns retrieval results in an
-extractive-fallback mode that still demonstrates the pipeline.
+LLM provider selection: GEMINI_API_KEY is preferred (free tier), then
+ANTHROPIC_API_KEY, then OPENAI_API_KEY. Without any of them, the engine
+returns retrieval results in an extractive-fallback mode that still
+demonstrates the pipeline.
 """
 
 from __future__ import annotations
@@ -122,19 +123,37 @@ class RAGEngine:
             running += len(block)
         ctx = "\n".join(ctx_blocks)
         return (
-            "You are a helpful assistant answering questions using only the company "
-            "knowledge base below.\n\n"
+            "You are a helpful assistant answering the user's question using only "
+            "the information in the knowledge base below. The knowledge base is a "
+            "mix of company policies and everyday-life topics (cooking, household, "
+            "health, finance, travel, tech help).\n\n"
             "Rules:\n"
             "- Only use information present in the context. If the answer is not "
-            "in the context, say so directly.\n"
-            "- Cite the source by the bracketed number, e.g. [1] or [2].\n"
-            "- Keep the answer concise and factual.\n\n"
+            "in the context, say so directly — don't guess.\n"
+            "- Cite each fact you use by its bracketed number, e.g. [1] or [2].\n"
+            "- Keep the answer concise, friendly, and easy to understand.\n\n"
             f"CONTEXT:\n{ctx}\n\n"
             f"QUESTION: {query}\n\n"
             "ANSWER:"
         )
 
     def _call_llm(self, prompt: str) -> tuple[str, str]:
+        if os.getenv("GEMINI_API_KEY"):
+            try:
+                import google.generativeai as genai
+                genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+                model = genai.GenerativeModel("gemini-2.5-flash")
+                resp = model.generate_content(
+                    prompt,
+                    generation_config=genai.types.GenerationConfig(
+                        max_output_tokens=512,
+                        temperature=0.2,
+                    ),
+                )
+                return resp.text, "google (gemini-2.5-flash)"
+            except Exception as e:
+                return f"[Gemini call failed: {e}]", "gemini (failed)"
+
         if os.getenv("ANTHROPIC_API_KEY"):
             try:
                 import anthropic
@@ -163,7 +182,8 @@ class RAGEngine:
 
         return (
             "[No LLM API key found - showing extractive-fallback mode]\n\n"
-            "Set ANTHROPIC_API_KEY or OPENAI_API_KEY to enable grounded "
+            "Set GEMINI_API_KEY (free tier at aistudio.google.com), "
+            "ANTHROPIC_API_KEY, or OPENAI_API_KEY to enable grounded "
             "LLM answer generation. The retrieved contexts shown above contain "
             "the source material that would be sent to the LLM, formatted in "
             "the exact prompt visible in the 'Show prompt sent to LLM' panel.",

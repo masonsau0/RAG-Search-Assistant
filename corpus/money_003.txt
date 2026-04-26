@@ -1,0 +1,3 @@
+How Compound Interest Works
+
+Compound interest is interest earned on both the original amount and previously-earned interest — it grows faster than simple interest. Example: $1,000 invested at 7% annual return becomes about $1,967 after 10 years and $7,612 after 30 years. The earlier you start, the more dramatic the effect. A 25-year-old saving $200/month at 7% until age 65 ends up with about $525,000; starting at 35 with the same amount yields about $245,000.

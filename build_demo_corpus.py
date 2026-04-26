@@ -284,6 +284,148 @@ DOCS: list[tuple[str, str, str]] = [
      "Sprint planning is biweekly on Monday mornings; standup is daily at "
      "10 AM. Roadmap items live in epics and roll up to quarterly "
      "objectives in the OKRs board."),
+
+    # ------------------------------------------------------------- Everyday — cooking
+    ("life_001", "How to Cook Pasta",
+     "Bring a large pot of water to a rolling boil. Add about 1 tablespoon "
+     "of salt per litre of water. Add the pasta and stir to prevent sticking. "
+     "Cook according to the package time, usually 8-12 minutes for dry pasta. "
+     "Test by tasting — pasta should be al dente, firm to the bite but not "
+     "crunchy. Reserve 1 cup of pasta water before draining; the starch helps "
+     "sauces cling. Drain in a colander but do not rinse unless using cold."),
+
+    ("life_002", "How to Boil an Egg",
+     "Place eggs in a single layer in a saucepan and cover with cold water "
+     "by 1 inch. Bring to a rolling boil over high heat, then remove from "
+     "heat, cover, and let stand. For soft-boiled eggs (runny yolk), let "
+     "stand 4-5 minutes. For medium (jammy yolk), 7-8 minutes. For hard-"
+     "boiled (fully set yolk), 10-12 minutes. Transfer immediately to ice "
+     "water for 5 minutes — this stops cooking and makes peeling easier."),
+
+    ("life_003", "Basic Knife Skills",
+     "Use a sharp chef's knife — a dull knife is more dangerous because it "
+     "slips. Curl the fingertips of your guiding hand under so the blade "
+     "rides against your knuckles, never your fingertips. For onions: cut "
+     "in half through the root, peel, place flat side down, make horizontal "
+     "and vertical cuts, then cut across. Wash and dry knives by hand — "
+     "dishwashers dull and damage them."),
+
+    # ------------------------------------------------------------- Everyday — household
+    ("home_001", "How to Unclog a Drain",
+     "First try a plunger — fill the sink with enough water to cover the "
+     "plunger cup, then push down sharply 5-6 times. If that fails, try a "
+     "mixture of 1/2 cup baking soda followed by 1/2 cup white vinegar; let "
+     "fizz for 15 minutes, then flush with boiling water. For stubborn "
+     "clogs, a hand snake (drum auger) is more reliable than chemical "
+     "drain cleaners, which can damage pipes and are hazardous to skin."),
+
+    ("home_002", "Replacing a Light Bulb Safely",
+     "Turn off the light switch and let the bulb cool for at least 5 "
+     "minutes — incandescent and halogen bulbs get extremely hot. Stand on "
+     "a stable surface, never a chair with wheels. Remove the old bulb by "
+     "turning counter-clockwise. Match the replacement type and wattage to "
+     "the fixture's rating (printed inside or near the socket). LED bulbs "
+     "last 10-25x longer than incandescent and use 75% less energy."),
+
+    ("home_003", "Doing Laundry — Basics",
+     "Sort clothes by colour (whites, lights, darks) and by fabric care "
+     "(delicates separately). Read care labels before the first wash — some "
+     "items are dry-clean only or hand-wash only. Use cold water for most "
+     "loads — it saves energy and prevents shrinking and fading. Use about "
+     "2 tablespoons of detergent per load (less than the cap typically "
+     "suggests). Don't overload the machine — clothes need room to tumble."),
+
+    # ------------------------------------------------------------- Everyday — health
+    ("health_001", "Tips for Better Sleep",
+     "Aim for 7-9 hours per night. Keep a consistent sleep schedule, even "
+     "on weekends. Avoid caffeine after 2 PM and large meals within 3 hours "
+     "of bedtime. Keep the bedroom cool (around 18-20°C / 65-68°F), dark, "
+     "and quiet. Avoid screens for 30-60 minutes before bed, or use blue-"
+     "light filters. If you can't fall asleep within 20 minutes, get up "
+     "and do something quiet in dim light until you feel drowsy."),
+
+    ("health_002", "How Much Water to Drink",
+     "A common rule of thumb is 8 glasses (about 2 litres) per day, but "
+     "individual needs vary with body size, activity level, climate, and "
+     "diet. A simple test: urine should be pale yellow, not dark. Most "
+     "fruits, vegetables, and other beverages count toward total fluid "
+     "intake. Increase water during exercise, hot weather, or illness "
+     "with fever. You usually don't need to drink before you feel thirsty."),
+
+    ("health_003", "Starting an Exercise Habit",
+     "Start small — 10-15 minutes of walking daily for the first 2 weeks "
+     "is more sustainable than an ambitious 1-hour gym session you'll "
+     "abandon. The CDC recommends 150 minutes of moderate aerobic activity "
+     "per week (about 30 min 5 days a week) plus 2 sessions of strength "
+     "training. Build the habit first, then add intensity. Consistency "
+     "beats peak effort — three short workouts a week for a year beats "
+     "one perfect month and zero after that."),
+
+    # ------------------------------------------------------------- Everyday — finance
+    ("money_001", "Building a Basic Budget",
+     "The 50/30/20 rule is a simple starting point: 50% of after-tax "
+     "income to needs (rent, utilities, groceries, transit, insurance), "
+     "30% to wants (dining out, entertainment, hobbies), 20% to savings "
+     "and debt payoff. Track spending for one month before budgeting — "
+     "most people underestimate how much they spend on food and "
+     "subscriptions. Apps like YNAB, Mint, or a simple spreadsheet all "
+     "work; consistency matters more than the tool."),
+
+    ("money_002", "Emergency Fund Basics",
+     "An emergency fund is money set aside for unexpected expenses — job "
+     "loss, medical bills, urgent repairs. Target 3-6 months of essential "
+     "living expenses (not full salary) in a high-interest savings account "
+     "that's separate from your everyday account but accessible within a "
+     "day. Build it before investing in higher-risk assets. If you have "
+     "high-interest debt (credit cards), pay that down first while "
+     "saving a small starter fund of $1,000-2,000."),
+
+    ("money_003", "How Compound Interest Works",
+     "Compound interest is interest earned on both the original amount and "
+     "previously-earned interest — it grows faster than simple interest. "
+     "Example: $1,000 invested at 7% annual return becomes about $1,967 "
+     "after 10 years and $7,612 after 30 years. The earlier you start, the "
+     "more dramatic the effect. A 25-year-old saving $200/month at 7% "
+     "until age 65 ends up with about $525,000; starting at 35 with the "
+     "same amount yields about $245,000."),
+
+    # ------------------------------------------------------------- Everyday — tech help
+    ("tech_001", "Resetting Your Wi-Fi Router",
+     "If the internet stops working, restart the router first: unplug the "
+     "power cable, wait 30 seconds (so capacitors drain), then plug back "
+     "in. Wait 2-3 minutes for it to fully reconnect. If that doesn't fix "
+     "it, restart your modem the same way. A factory reset (small button "
+     "you press with a paperclip for 10+ seconds) wipes all settings "
+     "including Wi-Fi password — only do this if you're prepared to set "
+     "it up from scratch."),
+
+    ("tech_002", "Why Use a Password Manager",
+     "A password manager stores all your passwords encrypted, so you only "
+     "need to remember one master password. Benefits: every site can have "
+     "a unique strong password (so a breach at one site can't cascade), "
+     "auto-fill prevents phishing on lookalike domains, and built-in "
+     "generators create secure passwords automatically. Popular options: "
+     "1Password, Bitwarden (free tier), and Apple Keychain or Google "
+     "Password Manager (free, built into the OS)."),
+
+    # ------------------------------------------------------------- Everyday — travel
+    ("travel_001", "How to Pack for a Trip",
+     "Roll clothes instead of folding to save space and reduce wrinkles. "
+     "Pack heavier items (shoes, books) at the bottom near the wheels for "
+     "stability. Carry on essentials: medications, a change of clothes, "
+     "phone charger, and any irreplaceable items. Wear your bulkiest "
+     "shoes and jacket on the plane. Check airline liquids rules — most "
+     "limit carry-on liquids to containers under 100 ml, all in a clear "
+     "1-litre bag. Photograph your packed luggage before checking it."),
+
+    ("travel_002", "What to Do if Your Flight is Delayed",
+     "Check the airline app for the latest status — gate agents often "
+     "know less than the app. If the delay is significant, call the "
+     "airline's customer service line while standing in the rebooking "
+     "line — whichever responds first wins. For long delays in airports, "
+     "many airlines provide meal vouchers (ask). For overnight delays, "
+     "ask if a hotel room is provided. Travel insurance and many credit "
+     "cards reimburse delay-related expenses; keep all receipts."),
 ]
 
 

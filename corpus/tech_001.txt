@@ -1,0 +1,3 @@
+Resetting Your Wi-Fi Router
+
+If the internet stops working, restart the router first: unplug the power cable, wait 30 seconds (so capacitors drain), then plug back in. Wait 2-3 minutes for it to fully reconnect. If that doesn't fix it, restart your modem the same way. A factory reset (small button you press with a paperclip for 10+ seconds) wipes all settings including Wi-Fi password — only do this if you're prepared to set it up from scratch.

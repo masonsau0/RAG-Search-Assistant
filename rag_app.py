@@ -39,21 +39,26 @@ with st.sidebar:
 
     st.divider()
     st.subheader("LLM provider")
+    has_gemini = bool(os.getenv("GEMINI_API_KEY"))
     has_anthropic = bool(os.getenv("ANTHROPIC_API_KEY"))
     has_openai = bool(os.getenv("OPENAI_API_KEY"))
-    if has_anthropic:
+    if has_gemini:
+        st.success("Gemini key detected (gemini-2.5-flash)")
+    elif has_anthropic:
         st.success("Anthropic key detected (Claude Haiku 4.5)")
     elif has_openai:
         st.success("OpenAI key detected (GPT-4o-mini)")
     else:
         st.warning("No API key set — running in extractive-fallback mode")
         st.code(
-            "ANTHROPIC_API_KEY=sk-ant-...\nOPENAI_API_KEY=sk-...",
+            "GEMINI_API_KEY=...    # free tier at aistudio.google.com\n"
+            "ANTHROPIC_API_KEY=sk-ant-...\n"
+            "OPENAI_API_KEY=sk-...",
             language="bash",
         )
         st.caption(
-            "Set either env var before launching Streamlit to enable "
-            "LLM-grounded answers."
+            "Set any one of these env vars before launching Streamlit to "
+            "enable LLM-grounded answers."
         )
 
     st.divider()
@@ -71,14 +76,22 @@ with st.sidebar:
 
 # ---------------------------------------------------------------- main panel
 EXAMPLES = [
+    # Everyday life
+    "How do I cook pasta properly?",
+    "How long should I boil an egg for a runny yolk?",
+    "What can I do to sleep better?",
+    "How much water should I drink each day?",
+    "How do I unclog a drain without using harsh chemicals?",
+    "What's a good way to start exercising?",
+    "How does compound interest actually work?",
+    "What should I do if my flight gets delayed?",
+    "Why should I use a password manager?",
+    # Work / company knowledge base
     "How do I request paid time off?",
     "What's the process for code review?",
     "How does on-call rotation work?",
-    "What's the dress code in the office?",
-    "Who do I contact for IT issues on my first day?",
-    "What benefits do I get and when do they start?",
-    "How are security incidents reported?",
     "What's our remote work policy?",
+    "How are security incidents reported?",
 ]
 selected = st.selectbox("Example questions", [""] + EXAMPLES, index=0)
 default_q = selected if selected else ""
