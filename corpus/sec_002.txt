@@ -1,0 +1,3 @@
+Multi-Factor Authentication (MFA)
+
+MFA is mandatory for all corporate accounts: email, SSO, code repositories, cloud consoles, and the password manager. Hardware keys (YubiKey) are issued to engineers and security-sensitive roles and are the required method for accessing production systems. TOTP via authenticator apps is acceptable for non-production access.

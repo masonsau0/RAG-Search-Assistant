@@ -1,0 +1,3 @@
+Slack Etiquette
+
+Public channels are preferred — DMs are for personal or sensitive topics. Use threads for replies to keep main channels readable. Set your status to indicate availability (focus, lunch, OOO). For urgent issues outside business hours, page via PagerDuty rather than Slack. Do not @channel unless it's actionable for everyone.

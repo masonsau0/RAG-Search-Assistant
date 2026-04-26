@@ -1,0 +1,3 @@
+Acceptable Use of AI Tools
+
+Approved AI tools (corporate ChatGPT Enterprise, GitHub Copilot, internal LLM gateway) may be used for company work. Do not paste Confidential or Restricted data into consumer AI tools. All AI-generated code must be reviewed and tested before merging — the submitting engineer is responsible for correctness regardless of the source.

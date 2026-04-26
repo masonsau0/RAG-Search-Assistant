@@ -1,0 +1,3 @@
+Code Review Process
+
+All non-trivial changes go through pull request review. At minimum one reviewer from the relevant team must approve. For changes touching shared infrastructure, two reviewers are required, with at least one from the platform team. PRs should be under 400 lines where practical; larger PRs need a design doc linked. Reviewers are expected to respond within 1 business day.

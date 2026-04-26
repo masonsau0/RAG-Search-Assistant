@@ -1,0 +1,3 @@
+Jira Workflow
+
+Engineering work is tracked in Jira. Issue types: Story, Bug, Task, Spike. Stories require acceptance criteria and a story-point estimate. Sprint planning is biweekly on Monday mornings; standup is daily at 10 AM. Roadmap items live in epics and roll up to quarterly objectives in the OKRs board.

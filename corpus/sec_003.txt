@@ -1,0 +1,3 @@
+Data Classification
+
+Data is classified as Public, Internal, Confidential, or Restricted. Customer PII is Restricted and must only be accessed via the approved data-access tooling, which logs every query. Restricted data may not be exported, screenshotted, or stored on local disks. Confidential data (internal metrics, business plans) requires a VPN connection to access.

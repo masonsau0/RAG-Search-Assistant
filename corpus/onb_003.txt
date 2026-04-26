@@ -1,0 +1,3 @@
+Equipment Setup
+
+New employees receive: laptop (M-series MacBook Pro by default; Linux/Windows by request), external monitor, keyboard, mouse, headset, and a YubiKey hardware-security key. Home-office stipend of $500 is available in the first 90 days for additional ergonomic items (chair, desk lamp, etc.) — submit receipts via Expensify.

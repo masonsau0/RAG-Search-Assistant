@@ -1,0 +1,3 @@
+VPN & Network Access
+
+Engineering access to production systems requires the corporate VPN (Tailscale) plus a hardware key. The VPN is also required for accessing internal staging environments and certain SaaS tools (billing, customer data). Public Wi-Fi without VPN is allowed only for browsing public web; never for company work.

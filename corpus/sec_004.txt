@@ -1,0 +1,3 @@
+Reporting Security Incidents
+
+If you suspect a security incident — phishing, lost device, compromised credentials, suspicious activity — report immediately to security@company.com or via the Slack channel `#security-incidents`. Do not investigate on your own. The Security team will triage within 30 minutes and coordinate response. Reports are non-punitive.

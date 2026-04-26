@@ -1,0 +1,3 @@
+Monitoring & Observability
+
+Production services emit metrics to Prometheus (scraped every 15s), logs to Loki, and traces to Tempo. Dashboards live in Grafana. Standard SLOs: 99.9% availability and p95 latency under 300ms for user-facing APIs. Alerts route to the relevant on-call rotation via PagerDuty. Runbooks are linked from each alert.

@@ -1,0 +1,3 @@
+Deployment Process
+
+Deployments happen via the internal CI/CD pipeline. Every merge to `main` automatically deploys to staging. Production deployments are gated by a manual approval and a green canary check (5% traffic for 30 minutes). Friday after 3 PM and during code-freeze periods (last week of December, week before major launches) are blocked.

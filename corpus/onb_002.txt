@@ -1,0 +1,3 @@
+IT Help on Day 1
+
+For any IT or laptop issues during onboarding, contact the IT desk via Slack (`#it-help`) or email it@company.com. The IT walk-up clinic is in Room 4-12 from 9 AM to 5 PM Monday through Friday. After hours, file a ticket in ServiceNow — non-urgent tickets are answered within 1 business day.

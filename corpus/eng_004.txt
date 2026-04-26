@@ -1,0 +1,3 @@
+Incident Response
+
+When a production incident is detected, the on-call engineer creates an incident channel in Slack named `#inc-YYYYMMDD-short-desc`. Severity is assigned (SEV-1 / SEV-2 / SEV-3). For SEV-1, the engineering manager and a comms lead must be paged. After resolution, a blameless post-mortem is written within 5 business days and shared company-wide.

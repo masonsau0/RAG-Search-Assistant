@@ -1,0 +1,3 @@
+On-Call Rotation
+
+Engineers in the on-call rotation are paged via PagerDuty. Each rotation is 1 week, Monday morning to Monday morning, with primary and secondary on-call. SLA: ack within 5 minutes for SEV-1, 15 minutes for SEV-2. On-call gets a $400 weekly stipend plus comp time. New engineers shadow at least 2 rotations before going live.

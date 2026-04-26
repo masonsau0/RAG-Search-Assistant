@@ -1,0 +1,3 @@
+Source Control & Branching
+
+We use trunk-based development. Feature branches branch from `main`, stay alive less than 1 week, and merge back via squash-and-merge. Long-lived feature branches are discouraged — use feature flags instead. Commit messages follow the Conventional Commits format (feat:, fix:, chore:, docs:).
