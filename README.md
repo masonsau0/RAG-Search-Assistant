@@ -1,5 +1,7 @@
 # RAG Search Assistant
 
+**[Live demo](https://rag-search-assistant.streamlit.app)** — runs in your browser, no install required.
+
 A **retrieval-augmented generation (RAG)** system that answers natural-language
 questions over a company knowledge base. Combines **BM25** (sparse,
 term-overlap) and **sentence-transformer embeddings** (dense, semantic)
