@@ -1,17 +1,17 @@
 # RAG Search Assistant
 
-**[Live demo](https://mason-rag-search-assistant.streamlit.app/)** — runs in your browser, no install required.
+**[Live demo](https://mason-rag-search-assistant.streamlit.app/)** : runs in the browser, no install required.
 
 A **retrieval-augmented generation (RAG)** system that answers natural-language
 questions over a company knowledge base. Combines **BM25** (sparse,
 term-overlap) and **sentence-transformer embeddings** (dense, semantic)
 through weighted score fusion, then sends the top-K retrieved chunks to a
 **large language model (LLM)** with a strict "only use the context"
-prompt — returning a grounded answer with numbered source citations.
+prompt : returning a grounded answer with numbered source citations.
 
 The bundled demo corpus is **37 short policy / FAQ documents** modelled on
-a typical tech-company internal knowledge base — HR & benefits, engineering
-practices, security, onboarding, office logistics, and internal tools — so
+a typical tech-company internal knowledge base (HR & benefits, engineering
+practices, security, onboarding, office logistics, and internal tools), so
 the assistant runs out of the box.
 
 ## What it actually does
@@ -28,19 +28,19 @@ the assistant runs out of the box.
    numbered citations and instructs the LLM to (a) use only the provided
    context, (b) cite sources by their bracket number, (c) say so directly if
    the answer is not in the context.
-4. **Calls the LLM** — Anthropic Claude (preferred) or OpenAI GPT (fallback)
-   — and returns the answer alongside the retrieved chunks and the exact
+4. **Calls the LLM**, Anthropic Claude (preferred) or OpenAI GPT (fallback),
+   and returns the answer alongside the retrieved chunks and the exact
    prompt that was sent, so grounding is auditable.
 
-If neither API key is set, the engine runs in **extractive-fallback mode** —
+If neither API key is set, the engine runs in **extractive-fallback mode** :
 the retrieval pipeline still works end-to-end and you can see the prompt
 that would have been sent.
 
 ## Why hybrid retrieval
 
-Pure BM25 misses paraphrases — searching for "how do I take time off" against
+Pure BM25 misses paraphrases : searching for "how do I take time off" against
 a corpus that uses the term "PTO" returns nothing useful. Pure dense retrieval
-misses exact-keyword matches — a query for a specific tool name gets
+misses exact-keyword matches : a query for a specific tool name gets
 out-ranked by semantically-similar but irrelevant documents. The two methods
 fail in opposite ways, and a weighted fusion captures the best of both:
 
@@ -77,14 +77,14 @@ streamlit run rag_app.py
 ```
 
 The first launch downloads the `all-MiniLM-L6-v2` model (~22 MB) and
-indexes the corpus — subsequent launches are cached.
+indexes the corpus : subsequent launches are cached.
 
 ### Enabling the LLM
 
 Set one of the following environment variables before launching:
 
 ```bash
-# Anthropic (preferred — uses claude-haiku-4-5)
+# Anthropic (preferred : uses claude-haiku-4-5)
 export ANTHROPIC_API_KEY=sk-ant-...
 
 # OpenAI fallback (uses gpt-4o-mini)
@@ -98,7 +98,7 @@ $env:ANTHROPIC_API_KEY = "sk-ant-..."
 streamlit run rag_app.py
 ```
 
-Without an API key, the dashboard runs in **extractive-fallback mode** —
+Without an API key, the dashboard runs in **extractive-fallback mode** :
 retrieval still works end-to-end, and the exact prompt that would be sent
 to the LLM is visible in the "Show prompt" panel.
 
@@ -112,25 +112,25 @@ result = engine.answer("How do I request paid time off?", top_k=5, alpha=0.5)
 
 print(result.answer)
 for c in result.contexts:
-    print(f"[{c.docno}] {c.headline} — hybrid={c.hybrid_score:.3f}")
+    print(f"[{c.docno}] {c.headline} : hybrid={c.hybrid_score:.3f}")
 ```
 
 ## Dashboard features
 
-- **α slider** (0.0 – 1.0) — live blend between BM25 (α = 1) and dense (α = 0).
+- **α slider** (0.0 – 1.0) : live blend between BM25 (α = 1) and dense (α = 0).
   Pick a query and slide α from 1 to 0 to watch the result set shift from
   keyword-matching to semantic-similar.
-- **Top-K slider** (1 – 10) — how many chunks to feed to the LLM.
-- **Per-result score breakdown** — every retrieved chunk shows its hybrid,
+- **Top-K slider** (1 – 10) : how many chunks to feed to the LLM.
+- **Per-result score breakdown** : every retrieved chunk shows its hybrid,
   BM25-normalised, and dense-normalised scores side by side.
-- **Prompt visibility** — the exact prompt sent to the LLM is shown,
+- **Prompt visibility** : the exact prompt sent to the LLM is shown,
   citations and all, so the grounding is auditable.
-- **Provider auto-detection** — sidebar reports which LLM is in use, or
+- **Provider auto-detection** : sidebar reports which LLM is in use, or
   warns when neither key is set.
 
 ## Stack
 
-- **Python** (no third-party retrieval/IR library — BM25 is implemented
+- **Python** (no third-party retrieval/IR library : BM25 is implemented
   from scratch)
 - **sentence-transformers** (`all-MiniLM-L6-v2`) for dense embeddings
 - **NumPy** for vectorised cosine similarity
